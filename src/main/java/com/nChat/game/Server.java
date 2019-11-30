@@ -10,13 +10,13 @@ import javax.swing.*;
 import java.util.*;
 import java.util.List;
 
-public class Server implements GameConstants {
+class Server implements GameConstants {
 	private Game game;
 	private Stack<UNOCard> playedCards;
-	public boolean canPlay;
+	private boolean canPlay;
 	private int mode;
 
-	public Server() {
+	Server() {
 		mode = GAMEMODES[1];
 		game = new Game(mode);
 		playedCards = new Stack<>();
@@ -43,7 +43,7 @@ public class Server implements GameConstants {
 		}
 	}
 
-	public List<UNOCard> getHandCards(String id) {
+	List<UNOCard> getHandCards(String id) {
 		return Arrays.stream(game.getPlayers())
 				.filter(player -> player.getId().equals(id))
 				.findFirst()
@@ -52,7 +52,7 @@ public class Server implements GameConstants {
 	}
 	
 	//request to play a card
-	private void playThisCard(UNOCard clickedCard) {
+	boolean playThisCard(UNOCard clickedCard) {
 
 		// Check player's turn
 		if (isHisTurn(clickedCard)) {
@@ -77,8 +77,10 @@ public class Server implements GameConstants {
 
 				game.switchTurn();
 				checkResults();
+				return true;
 			}
 		}
+		return false;
 	}
 
 	//Check if the game is over
@@ -159,7 +161,7 @@ public class Server implements GameConstants {
 		game.drawCard(peekTopCard());
 	}
 
-	private UNOCard peekTopCard() {
+	public UNOCard peekTopCard() {
 		return playedCards.peek();
 	}
 
