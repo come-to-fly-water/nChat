@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/UNO - Basic.iml" filepath="$PROJECT_DIR$/UNO - Basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nChat.iml" filepath="$PROJECT_DIR$/nChat.iml" />
     </modules>
   </component>
 </project>

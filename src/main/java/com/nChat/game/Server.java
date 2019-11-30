@@ -1,10 +1,10 @@
-package main.java.com.nChat.game;
+package com.nChat.game;
 
-import main.java.com.nChat.game.CardModel.WildCard;
-import main.java.com.nChat.game.GameModel.Game;
-import main.java.com.nChat.game.GameModel.Player;
-import main.java.com.nChat.game.Interfaces.GameConstants;
-import main.java.com.nChat.game.CardModel.UNOCard;
+import com.nChat.game.CardModel.WildCard;
+import com.nChat.game.GameModel.Game;
+import com.nChat.game.GameModel.Player;
+import com.nChat.game.Interfaces.GameConstants;
+import com.nChat.game.CardModel.UNOCard;
 
 import javax.swing.*;
 import java.util.*;

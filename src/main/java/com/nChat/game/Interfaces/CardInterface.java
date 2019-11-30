@@ -1,4 +1,4 @@
-package main.java.com.nChat.game.Interfaces;
+package com.nChat.game.Interfaces;
 import java.awt.*;
 
 public interface CardInterface{

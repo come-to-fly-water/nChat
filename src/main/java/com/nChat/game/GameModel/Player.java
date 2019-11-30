@@ -1,8 +1,8 @@
-package main.java.com.nChat.game.GameModel;
+package com.nChat.game.GameModel;
 
 import java.util.LinkedList;
 
-import main.java.com.nChat.game.CardModel.UNOCard;
+import com.nChat.game.CardModel.UNOCard;
 
 public class Player {
 	

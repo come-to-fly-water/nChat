@@ -1,8 +1,8 @@
-package main.java.com.nChat.game.CardModel;
+package com.nChat.game.CardModel;
 
 import java.util.LinkedList;
 
-import main.java.com.nChat.game.Interfaces.GameConstants;
+import com.nChat.game.Interfaces.GameConstants;
 
 /**
  * This Class contains standard 108-Card stack

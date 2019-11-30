@@ -1,4 +1,4 @@
-package main.java.com.nChat.game.CardModel;
+package com.nChat.game.CardModel;
 
 public class ActionCard extends UNOCard{
 	

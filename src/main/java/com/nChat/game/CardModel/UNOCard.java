@@ -1,7 +1,7 @@
-package main.java.com.nChat.game.CardModel;
+package com.nChat.game.CardModel;
 
-import main.java.com.nChat.game.Interfaces.CardInterface;
-import main.java.com.nChat.game.Interfaces.UNOConstants;
+import com.nChat.game.Interfaces.CardInterface;
+import com.nChat.game.Interfaces.UNOConstants;
 
 public abstract class UNOCard implements CardInterface, UNOConstants {
 	

@@ -1,12 +1,12 @@
-package main.java.com.nChat.game.GameModel;
+package com.nChat.game.GameModel;
 
 import java.util.LinkedList;
 import java.util.Random;
 import java.util.Stack;
 
-import main.java.com.nChat.game.CardModel.CardDeck;
-import main.java.com.nChat.game.Interfaces.GameConstants;
-import main.java.com.nChat.game.CardModel.UNOCard;
+import com.nChat.game.CardModel.CardDeck;
+import com.nChat.game.Interfaces.GameConstants;
+import com.nChat.game.CardModel.UNOCard;
 
 public class Dealer implements GameConstants {
 	

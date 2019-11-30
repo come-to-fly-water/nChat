@@ -1,12 +1,12 @@
-package main.java.com.nChat.game.GameModel;
+package com.nChat.game.GameModel;
 
 import java.util.Stack;
 
 import javax.swing.JOptionPane;
 
-import main.java.com.nChat.game.CardModel.*;
-import main.java.com.nChat.game.Interfaces.GameConstants;
-import main.java.com.nChat.game.CardModel.UNOCard;
+import com.nChat.game.CardModel.*;
+import com.nChat.game.Interfaces.GameConstants;
+import com.nChat.game.CardModel.UNOCard;
 
 public class Game implements GameConstants {
 
