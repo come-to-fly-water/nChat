@@ -4,11 +4,6 @@ import java.awt.Color;
 
 import javax.swing.JTextArea;
 
-import ServerController.MyButtonListener;
-import ServerController.MyCardListener;
-import View.InfoPanel;
-
-
 public interface GameConstants extends UNOConstants {
 	
 	int TOTAL_CARDS = 108;
@@ -26,8 +21,4 @@ public interface GameConstants extends UNOConstants {
 	
 	int[] GAMEMODES = {vsPC, MANUAL};
 	
-	MyCardListener CARDLISTENER = new MyCardListener();
-	MyButtonListener BUTTONLISTENER = new MyButtonListener();
-	
-	InfoPanel infoPanel = new InfoPanel();
 }

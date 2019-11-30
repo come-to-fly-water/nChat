@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.util.LinkedList;
 
 import Interfaces.GameConstants;
-import ServerController.MyCardListener;
 import View.UNOCard;
 
 /**
@@ -28,7 +27,6 @@ public class CardDeck implements GameConstants {
 		UNOcards = new LinkedList<UNOCard>();
 		
 		addCards();
-		addCardListener(CARDLISTENER);
 	}
 	
 	
@@ -58,12 +56,6 @@ public class CardDeck implements GameConstants {
 			}
 		}
 		
-	}
-	
-	//Cards have MouseListener
-	public void addCardListener(MyCardListener listener){
-		for(UNOCard card: UNOcards)
-		card.addMouseListener(listener);
 	}
 	
 	public LinkedList<UNOCard> getCards(){

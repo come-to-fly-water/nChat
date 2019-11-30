@@ -62,7 +62,7 @@ public class Game implements GameConstants {
 				p.removeCard(playedCard);
 				
 				if (p.getTotalCards() == 1 && !p.getSaidUNO()) {
-					infoPanel.setError(p.getName() + " Forgot to say UNO");
+					System.out.println(p.getName() + " Forgot to say UNO");
 					p.obtainCard(getCard());
 					p.obtainCard(getCard());
 				}else if(p.getTotalCards()>2){
@@ -109,15 +109,11 @@ public class Game implements GameConstants {
 	
 	//response whose turn it is
 	public void whoseTurn() {
-
 		for (Player p : players) {
 			if (p.isMyTurn()){
-				infoPanel.updateText(p.getName() + "'s Turn");
 				System.out.println(p.getName() + "'s Turn");
 			}
 		}
-		infoPanel.setDetail(playedCardsSize(), remainingCards());
-		infoPanel.repaint();
 	}
 	
 	//return if the game is over
@@ -176,7 +172,7 @@ public class Game implements GameConstants {
 		for (Player p : players) {
 			if (p.isMyTurn()) {
 				if (p.getTotalCards() == 1 && !p.getSaidUNO()) {
-					infoPanel.setError(p.getName() + " Forgot to say UNO");
+					System.out.println(p.getName() + " Forgot to say UNO");
 					p.obtainCard(getCard());
 					p.obtainCard(getCard());
 				}
@@ -189,7 +185,7 @@ public class Game implements GameConstants {
 			if (p.isMyTurn()) {
 				if (p.getTotalCards() == 2) {
 					p.saysUNO();
-					infoPanel.setError(p.getName() + " said UNO");
+					System.out.println(p.getName() + " said UNO");
 				}
 			}
 		}
