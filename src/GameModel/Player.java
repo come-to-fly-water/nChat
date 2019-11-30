@@ -6,7 +6,7 @@ import View.UNOCard;
 
 public class Player {
 	
-	private String name = null;
+	private String id = null;
 	private boolean isMyTurn = false;
 	private boolean saidUNO = false;
 	private LinkedList<UNOCard> myCards;
@@ -18,17 +18,18 @@ public class Player {
 	}
 	
 	public Player(String player){
-		setName(player);
+		setId(player);
 		myCards = new LinkedList<UNOCard>();
 	}
 	
-	public void setName(String newName){
-		name = newName;
+	public void setId(String newName){
+		id = newName;
 	}
 	
-	public String getName(){
-		return this.name;
+	public String getId(){
+		return this.id;
 	}
+
 	public void obtainCard(UNOCard card){
 		myCards.add(card);
 	}
@@ -55,7 +56,7 @@ public class Player {
 	}
 	
 	public void toggleTurn(){
-		isMyTurn = (isMyTurn) ? false : true;
+		isMyTurn = !isMyTurn;
 	}
 	
 	public boolean isMyTurn(){
@@ -63,11 +64,11 @@ public class Player {
 	}
 	
 	public boolean hasCards(){
-		return (myCards.isEmpty()) ? false : true;
+		return !myCards.isEmpty();
 	}
 	
-	public boolean getSaidUNO(){
-		return saidUNO;
+	public boolean getDidNotSaidUNO(){
+		return !saidUNO;
 	}
 	
 	public void saysUNO(){

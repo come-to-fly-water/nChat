@@ -18,5 +18,6 @@ public class Main {
 		// UNOCard firstCard = game.getCard();
 
 		Server server = new Server();
+
 	}
 }

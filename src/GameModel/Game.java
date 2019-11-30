@@ -1,8 +1,5 @@
 package GameModel;
 
-import java.awt.Color;
-import java.util.LinkedList;
-import java.util.Random;
 import java.util.Stack;
 
 import javax.swing.JOptionPane;
@@ -17,7 +14,6 @@ public class Game implements GameConstants {
 	private boolean isOver;
 	private int GAMEMODE;
 	
-	private PC pc;
 	private Dealer dealer;
 	private Stack<UNOCard> cardStack;
 	
@@ -58,8 +54,8 @@ public class Game implements GameConstants {
 			if (p.hasCard(playedCard)){
 				p.removeCard(playedCard);
 				
-				if (p.getTotalCards() == 1 && !p.getSaidUNO()) {
-					System.out.println(p.getName() + " Forgot to say UNO");
+				if (p.getTotalCards() == 1 && p.getDidNotSaidUNO()) {
+					System.out.println(p.getId() + " Forgot to say UNO");
 					p.obtainCard(getCard());
 					p.obtainCard(getCard());
 				}else if(p.getTotalCards()>2){
@@ -108,7 +104,7 @@ public class Game implements GameConstants {
 	public void whoseTurn() {
 		for (Player p : players) {
 			if (p.isMyTurn()){
-				System.out.println(p.getName() + "'s Turn");
+				System.out.println(p.getId() + "'s Turn");
 			}
 		}
 	}
@@ -168,8 +164,8 @@ public class Game implements GameConstants {
 	public void checkUNO() {
 		for (Player p : players) {
 			if (p.isMyTurn()) {
-				if (p.getTotalCards() == 1 && !p.getSaidUNO()) {
-					System.out.println(p.getName() + " Forgot to say UNO");
+				if (p.getTotalCards() == 1 && p.getDidNotSaidUNO()) {
+					System.out.println(p.getId() + " Forgot to say UNO");
 					p.obtainCard(getCard());
 					p.obtainCard(getCard());
 				}
@@ -182,27 +178,14 @@ public class Game implements GameConstants {
 			if (p.isMyTurn()) {
 				if (p.getTotalCards() == 2) {
 					p.saysUNO();
-					System.out.println(p.getName() + " said UNO");
+					System.out.println(p.getId() + " said UNO");
 				}
 			}
 		}
 	}
 	
 	public boolean isPCsTurn(){
-		if(pc.isMyTurn()){
-			return true;
-		}
 		return false;
 	}
 
-	//if it's PC's turn, play it for pc
-	public void playPC(UNOCard topCard) {		
-		
-		if (pc.isMyTurn()) {
-			boolean done = pc.play(topCard);
-			
-			if(!done)
-				drawCard(topCard);
-		}
-	}
 }

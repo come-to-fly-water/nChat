@@ -47,7 +47,7 @@ public class Server implements GameConstants {
 
 	
 	//request to play a card
-	public void playThisCard(UNOCard clickedCard) {
+	private void playThisCard(UNOCard clickedCard) {
 
 		// Check player's turn
 		if (isHisTurn(clickedCard)) {
@@ -85,7 +85,7 @@ public class Server implements GameConstants {
 	}
 	
 	//check player's turn
-	public boolean isHisTurn(UNOCard clickedCard) {
+	private boolean isHisTurn(UNOCard clickedCard) {
 
 		for (Player p : game.getPlayers()) {
 			if (p.hasCard(clickedCard) && p.isMyTurn())
@@ -95,7 +95,7 @@ public class Server implements GameConstants {
 	}
 
 	//check if it is a valid card
-	public boolean isValidMove(UNOCard playedCard) {
+	private boolean isValidMove(UNOCard playedCard) {
 		UNOCard topCard = peekTopCard();
 
 		if (playedCard.getColor().equals(topCard.getColor())
@@ -150,15 +150,15 @@ public class Server implements GameConstants {
 			game.drawPlus(4);
 	}
 	
-	public void requestCard() {
+	private void requestCard() {
 		game.drawCard(peekTopCard());
 	}
 
-	public UNOCard peekTopCard() {
+	private UNOCard peekTopCard() {
 		return playedCards.peek();
 	}
 
-	public void submitSaidUNO() {
+	private void submitSaidUNO() {
 		game.setSaidUNO();
 	}
 }
