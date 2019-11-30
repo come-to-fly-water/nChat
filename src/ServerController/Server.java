@@ -74,13 +74,6 @@ public class Server implements GameConstants {
 				checkResults();
 			}
 		}
-
-
-		if(mode==vsPC && canPlay){
-			if(game.isPCsTurn()){
-				game.playPC(peekTopCard());
-			}
-		}
 	}
 
 	//Check if the game is over
@@ -159,11 +152,6 @@ public class Server implements GameConstants {
 	
 	public void requestCard() {
 		game.drawCard(peekTopCard());
-		
-		if(mode==vsPC && canPlay){
-			if(game.isPCsTurn())
-				game.playPC(peekTopCard());
-		}
 	}
 
 	public UNOCard peekTopCard() {

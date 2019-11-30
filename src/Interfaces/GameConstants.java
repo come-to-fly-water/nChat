@@ -15,10 +15,9 @@ public interface GameConstants extends UNOConstants {
 	int[] UNO_NUMBERS =  {0,1,2,3,4,5,6,7,8,9};	
 	String[] ActionTypes = {REVERSE,SKIP,DRAW2PLUS};	
 	String[] WildTypes = {W_COLORPICKER, W_DRAW4PLUS};
-	
-	int vsPC = 1;
+
 	int MANUAL = 2;
 	
-	int[] GAMEMODES = {vsPC, MANUAL};
+	int[] GAMEMODES = {1, MANUAL};
 	
 }

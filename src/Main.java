@@ -7,7 +7,7 @@ import javax.swing.SwingUtilities;
 
 import GameModel.Game;
 import Interfaces.GameConstants;
-import View.MainFrame;
+import ServerController.Server;
 import View.UNOCard;
 
 public class Main {
@@ -17,14 +17,6 @@ public class Main {
 		// Stack<UNOCard> playedCards = new Stack<UNOCard>();
 		// UNOCard firstCard = game.getCard();
 
-		//Create Frame and invoke it.
-		SwingUtilities.invokeLater(() -> {
-			JFrame frame = new MainFrame();
-			frame.setVisible(true);
-			frame.setResizable(false);
-			frame.setLocation(200, 100);
-			frame.pack();
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		});
+		Server server = new Server();
 	}
 }

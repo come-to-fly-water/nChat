@@ -30,10 +30,7 @@ public class Game implements GameConstants {
 		String name = (GAMEMODE==MANUAL) ? JOptionPane.showInputDialog("Player 1") : "PC";	
 		String name2 = JOptionPane.showInputDialog("Player 2");
 		
-		if(GAMEMODE==vsPC)
-			pc = new PC();
-		
-		Player player1 = (GAMEMODE==vsPC) ? pc : new Player(name);
+		Player player1 = new Player(name);
 		Player player2 = new Player(name2);		
 		player2.toggleTurn();				//Initially, player2's turn		
 			
