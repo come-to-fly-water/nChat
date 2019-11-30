@@ -14,14 +14,14 @@
     var websocket = null;
     function createWebSocket() {
         if ('WebSocket' in window) {
-            websocket = new WebSocket("ws://localhost:8080/ws/socketServer?uid=" + $("#uid").val());
+            websocket = new WebSocket("ws://localhost:8080/?uid=" + $("#uid").val());
             console.log($("#uid").val())
         }
         else if ('MozWebSocket' in window) {
-            websocket = new MozWebSocket("ws://localhost:8080/ws/socketServer?uid=" + $("#uid").val());
+            websocket = new MozWebSocket("ws://localhost:8080/?uid=" + $("#uid").val());
         }
         else {
-            websocket = new SockJS("http://localhost:8080/ws/socketServer?uid=" + $("#uid").val());
+            websocket = new SockJS("http://localhost:8080/?uid=" + $("#uid").val());
         }
 
         websocket.onopen = onOpen;

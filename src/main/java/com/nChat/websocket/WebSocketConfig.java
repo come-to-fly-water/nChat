@@ -10,10 +10,13 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 @EnableWebMvc
 @EnableWebSocket
 public class WebSocketConfig implements WebSocketConfigurer {
+
+    private static String WEBSOCKETURL = "/";
+
     public void registerWebSocketHandlers(WebSocketHandlerRegistry webSocketHandlerRegistry) {
-        //这个网址是用于websocket连接的建立 通信用的
+        //这个网址是用于websocket连接的建立通信用的
         webSocketHandlerRegistry
-                .addHandler(new WebSocketHandler(), "/ws/socketServer")
+                .addHandler(new WebSocketHandler(), WEBSOCKETURL)
                 .addInterceptors(new WebSocketInterceptor())
                 .setAllowedOrigins("*");
     }
