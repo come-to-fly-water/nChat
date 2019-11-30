@@ -7,7 +7,7 @@ import View.UNOCard;
 public class WildCard extends UNOCard {
 	
 	private int Function = 0;
-	private Color chosenColor;
+	private String chosenColor;
 	
 	public WildCard() {
 	}
@@ -16,11 +16,11 @@ public class WildCard extends UNOCard {
 		super(BLACK, WILD, cardValue);		
 	}
 	
-	public void useWildColor(Color wildColor){
+	public void useWildColor(String wildColor){
 		chosenColor = wildColor;
 	}
 	
-	public Color getWildColor(){
+	public String getWildColor(){
 		return chosenColor;
 	}
 

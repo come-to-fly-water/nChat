@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Stack;
 
@@ -18,6 +19,10 @@ public class Main {
 		// UNOCard firstCard = game.getCard();
 
 		Server server = new Server();
-
+		List<UNOCard> cards = server.getHandCards("123");
+		cards.forEach(unoCard -> System.out.print(unoCard.getValue() + " "));
+		System.out.println();
+		cards.forEach(unoCard -> System.out.print(unoCard.getColor() + " "));
+		System.out.println();
 	}
 }

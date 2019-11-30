@@ -12,18 +12,15 @@ public class Game implements GameConstants {
 
 	private Player[] players;
 	private boolean isOver;
-	private int GAMEMODE;
-	
+
 	private Dealer dealer;
 	private Stack<UNOCard> cardStack;
 	
 	
 	public Game(int mode){
-		
-		GAMEMODE = mode;
-		
+
 		//Create players
-		String name = (GAMEMODE==MANUAL) ? JOptionPane.showInputDialog("Player 1") : "PC";	
+		String name = (mode ==MANUAL) ? JOptionPane.showInputDialog("Player 1") : "PC";
 		String name2 = JOptionPane.showInputDialog("Player 2");
 		
 		Player player1 = new Player(name);

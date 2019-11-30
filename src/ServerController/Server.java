@@ -8,9 +8,8 @@ import View.UNOCard;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.Stack;
+import java.util.*;
+import java.util.List;
 
 public class Server implements GameConstants {
 	private Game game;
@@ -45,6 +44,13 @@ public class Server implements GameConstants {
 		}
 	}
 
+	public List<UNOCard> getHandCards(String id) {
+		return Arrays.stream(game.getPlayers())
+				.filter(player -> player.getId().equals(id))
+				.findFirst()
+				.orElseThrow(null)
+				.getAllCards();
+	}
 	
 	//request to play a card
 	private void playThisCard(UNOCard clickedCard) {
@@ -106,7 +112,7 @@ public class Server implements GameConstants {
 		else if (playedCard.getType() == WILD) {
 			return true;
 		} else if (topCard.getType() == WILD) {
-			Color color = ((WildCard) topCard).getWildColor();
+			String color = ((WildCard) topCard).getWildColor();
 			return color.equals(playedCard.getColor());
 		}
 		return false;

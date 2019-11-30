@@ -11,7 +11,7 @@ public class ActionCard extends UNOCard{
 	public ActionCard(){
 	}
 	
-	public ActionCard(Color cardColor, String cardValue){
+	public ActionCard(String cardColor, String cardValue){
 		super(cardColor,ACTION, cardValue);		
 	}	
 }

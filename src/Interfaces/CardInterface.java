@@ -15,8 +15,8 @@ public interface CardInterface{
 	//Default offset
 	int OFFSET = 71;
 	
-	void setColor(Color newColor);
-	Color getColor();
+	void setColor(String newColor);
+	String getColor();
 	
 	void setValue(String newValue);
 	String getValue();

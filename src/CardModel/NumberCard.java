@@ -8,7 +8,7 @@ public class NumberCard extends UNOCard {
 	public NumberCard(){
 	}
 	
-	public NumberCard(Color cardColor, String cardValue){
+	public NumberCard(String cardColor, String cardValue){
 		super(cardColor, NUMBERS, cardValue);		
 	}
 

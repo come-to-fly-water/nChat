@@ -32,7 +32,7 @@ public class CardDeck implements GameConstants {
 	
 	//Create 108 cards for this CardDeck
 	private void addCards() {
-		for(Color color:UNO_COLORS){
+		for(String color:UNO_COLORS){
 			
 			//Create 76 NumberCards --> doubles except 0s.
 			for(int num : UNO_NUMBERS){
