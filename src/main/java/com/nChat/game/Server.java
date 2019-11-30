@@ -1,14 +1,13 @@
 package com.nChat.game;
 
+import com.nChat.game.CardModel.UNOCard;
 import com.nChat.game.CardModel.WildCard;
 import com.nChat.game.GameModel.Game;
 import com.nChat.game.GameModel.Player;
 import com.nChat.game.Interfaces.GameConstants;
-import com.nChat.game.CardModel.UNOCard;
 
 import javax.swing.*;
 import java.util.*;
-import java.util.List;
 
 class Server implements GameConstants {
 	private Game game;

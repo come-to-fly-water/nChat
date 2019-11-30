@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.server.WebSession;
 import org.springframework.web.socket.TextMessage;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,27 +20,32 @@ public class IndexController {
 
     @RequestMapping("/send")
     public String send(HttpServletRequest request,
-                        HttpServletResponse response){
+                       HttpServletResponse response) {
         return "send";
     }
 
     @RequestMapping("/doSend")
     public String doSend(HttpServletRequest request,
-                       HttpServletResponse response,
-                       @RequestParam(value = "uid") int uid,
-                       @RequestParam(value = "messages") String messages){
+                         HttpServletResponse response,
+                         @RequestParam(value = "uid") int uid,
+                         @RequestParam(value = "messages") String messages) {
 
         HttpSession session = request.getSession(true);
         session.setAttribute("SESSION_USERNAME", uid);
-        webSocketHandler.sendMessageToUser(uid,new TextMessage(messages));
+        webSocketHandler.sendMessageToUser(uid, new TextMessage(messages));
         return "send";
     }
 
     @RequestMapping("/register")
     public String register(HttpServletRequest request,
-                        HttpServletResponse response){
+                           HttpServletResponse response) {
 
         return "register";
     }
 
+//    @RequestMapping("/createRoom")
+//    public String createRoom(HttpServletRequest request, HttpServletResponse response) {
+//        webSocketHandler.handleTextMessage
+//
+//    }
 }
